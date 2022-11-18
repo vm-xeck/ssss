@@ -1,2 +1,5 @@
-# ssss
-Soreha So Screensaver
+# _**Soreha So Screensaver**_
+
+requires ncurces
+
+TODO: Add keystroke exit
