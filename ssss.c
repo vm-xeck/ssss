@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <ncurses.h>
 #include <locale.h>
 #include <unistd.h>
@@ -7,11 +9,14 @@ int main(int argc, char *argv[]){
     setlocale(LC_ALL, "");
 
     for(int i=1; i<argc; i++){
-        char *option = argv[i];
-        if(option == "-h" || option == "--help"){
+        char *option;
+        option = malloc(strlen(argv[i])+1);
+        strcpy(option, argv[i]);
+        if(!strcmp(option, "-h") || !strcmp(option, "--help")){
             printf("Soreha So Screensaver\nUsage: ssss [options]\nOptions: \n    -h --help       Display this page and exit.\n    -v --version    Display version and exit.\n    -s --sound      Sound mode.\n");
             return 0;
         }
+        free(option);
     }
 
     initscr();
