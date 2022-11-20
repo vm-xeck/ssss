@@ -3,8 +3,21 @@
 #include <locale.h>
 #include <unistd.h>
 
-int main(void){
+int main(int argc, char *argv[]){
     setlocale(LC_ALL, "");
+
+    for(int i=1; i<argc; i++){
+        char option[] = *argv[i];
+        if(option == "-h" || option == "--help"){
+            printf("Soreha So Screensaver\n
+                    Usage: ssss [options]\n
+                    Options: 
+                        -h --help       Display this page and exit.\n
+                        -v --version    Display version and exit.\n
+                        -s --sound      Sound mode.\n");
+        }
+    }
+
     initscr();
     cbreak();
     noecho();
