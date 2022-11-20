@@ -7,13 +7,19 @@
 
 int main(int argc, char *argv[]){
     setlocale(LC_ALL, "");
+    int sound = 0;
 
     for(int i=1; i<argc; i++){
         char *option;
         option = malloc(strlen(argv[i])+1);
         strcpy(option, argv[i]);
-        if(!strcmp(option, "-h") || !strcmp(option, "--help")){
-            printf("Soreha So Screensaver\nUsage: ssss [options]\nOptions: \n    -h --help       Display this page and exit.\n    -v --version    Display version and exit.\n    -s --sound      Sound mode.\n");
+        if(!strcmp(option, "-v") || !strcmp(option, "--version")){
+            printf("Soreha So Screensaver\nVersion 1.1\n2022-11-20\n");
+            return 0;
+        } else if(!strcmp(option, "-s") || !strcmp(option, "--sound")){
+            sound = 1;
+        } else{
+            printf("Usage: ssss [options]\nOptions: \n    -h --help       Display this page and exit.\n    -v --version    Display version and exit.\n    -s --sound      Sound mode.\n");
             return 0;
         }
         free(option);
@@ -39,8 +45,14 @@ int main(int argc, char *argv[]){
 
         if(cursor[0] == 0 || cursor[0] == height - 3){
             direction[0] *= -1;
+            if(sound){
+                printf("\a");
+            }
         } else if(cursor[1] == 0 || cursor[1] == width - 18){
             direction[1] *= -1;
+            if(sound){
+                printf("\a");
+            }
         }
 
         mvaddstr(cursor[0], cursor[1], "＿人人人人人人人＿");
