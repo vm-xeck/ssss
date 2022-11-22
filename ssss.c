@@ -48,7 +48,8 @@ int main(int argc, char *argv[]){
             if(sound){
                 printf("\a");
             }
-        } else if(cursor[1] == 0 || cursor[1] == width - 18){
+        }
+        if(cursor[1] == 0 || cursor[1] == width - 18){
             direction[1] *= -1;
             if(sound){
                 printf("\a");
