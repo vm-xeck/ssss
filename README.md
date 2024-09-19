@@ -1,5 +1,5 @@
 # _**Soreha So Screensaver**_
 
-`curces.h`が必要です
+`curses.h`が必要です
 
 ![](https://raw.github.com/wiki/vm-xeck/ssss/images/ssss.gif)
