@@ -14,7 +14,7 @@ int main(int argc, char *argv[]){
         option = malloc(strlen(argv[i])+1);
         strcpy(option, argv[i]);
         if(!strcmp(option, "-v") || !strcmp(option, "--version")){
-            printf("Soreha So Screensaver\nVersion 1.1\n2022-11-20\n");
+            printf("Soreha So Screensaver\nVersion 1.2\n2024-09-19\n");
             return 0;
         } else if(!strcmp(option, "-s") || !strcmp(option, "--sound")){
             sound = 1;
