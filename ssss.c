@@ -6,7 +6,7 @@
 #include <unistd.h>
 
 int main(int argc, char *argv[]){
-    setlocale(LC_ALL, "");
+    setlocale(LC_ALL, "ja_JP.UTF-8");
     int sound = 0;
 
     for(int i=1; i<argc; i++){
@@ -28,7 +28,7 @@ int main(int argc, char *argv[]){
     initscr();
     cbreak();
     noecho();
-    timeout(1);
+    timeout(0);
     curs_set(0);
 
     int height, width;
@@ -37,8 +37,9 @@ int main(int argc, char *argv[]){
     int cursor[2] = {0, 0}, direction[2] = {1, 1};
     int input = 0;
 
-    while(!input){
+    while(input < 1){
         erase();
+        input = getch();
 
         cursor[0] += direction[0];
         cursor[1] += direction[1];
@@ -59,7 +60,6 @@ int main(int argc, char *argv[]){
         mvaddstr(cursor[0], cursor[1], "＿人人人人人人人＿");
         mvaddstr(cursor[0] + 1, cursor[1], "＞　それはそう　＜");
         mvaddstr(cursor[0] + 2, cursor[1], "￣Y^Y^Y^Y^Y^Y^Y￣");
-        //input = c.getch();
         refresh();
         usleep(100000);
     }
