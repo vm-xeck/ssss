@@ -1,6 +1,5 @@
 # _**Soreha So Screensaver**_
 
-requires `curces.h`
+`curces.h`が必要です
 
-TODO: Add keystroke exit
 ![](https://raw.github.com/wiki/vm-xeck/ssss/images/ssss.gif)
